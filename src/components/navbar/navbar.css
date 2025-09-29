@@ -1,23 +1,19 @@
-@import "tailwindcss";
+/* navbar.css */
+.nav_link {
+  @apply text-gray-700 font-medium transition-colors duration-300;
+}
 
+.nav_link:hover {
+  @apply text-purple-700 underline;
+}
 
-
-  .nav_sub_container {
-    @apply flex justify-between items-center;
-  }
-
-  .nav_left {
-    @apply flex items-center;
-  }
-
-  .nav_link {
-    @apply text-gray-700 font-bold transition-transform duration-300 hover:scale-105 hover:text-blue-600;
-  }
-
-  .nav_right ul {
-    @apply flex gap-6;
-  }
-
-  .nav_right ul li a {
-    @apply text-gray-700 font-medium transition-all duration-300 hover:text-blue-500 hover:underline;
-  }
+/* button.css */
+.btn {
+  @apply rounded-md font-semibold transition-transform duration-300;
+}
+.btn:hover {
+  @apply scale-105;
+}
+.btn:active {
+  @apply scale-95;
+}
