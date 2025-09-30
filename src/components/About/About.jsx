@@ -73,21 +73,21 @@ const About = () => {
             <img
               src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1100&q=80"
               alt="founder"
-              className="w-full h-full object-cover  shadow-lg"
+              loading="lazy" // 👈 native lazy loading
+              className="w-full h-full object-cover shadow-lg"
             />
           </div>
         </div>
       </section>
 
       {/*  */}
-      <section className="w-full bg-[#F7F7F7] px-6 sm:px-12 md:px-20 py-24">
-        <div className="max-w-[1100px] mx-auto flex flex-col md:flex-row gap-10">
-          {/* Left Column: Vertical carousel */}
-          <div className="flex-1 w-full md:w-1/2 h-[500px] md:h-[600px] overflow-hidden pt-20">
+      <section className="w-full bg-[#F7F7F7] px-4 sm:px-8 md:px-16 lg:px-20 py-16 md:py-24">
+        <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row gap-12 md:gap-16">
+          {/* Left Column: Carousel */}
+          <div className="flex-1 w-full md:w-1/2 h-[280px] sm:h-[380px] md:h-[600px] overflow-hidden">
             <Swiper
-              direction="vertical"
               slidesPerView={3}
-              spaceBetween={8}
+              spaceBetween={12}
               loop={true}
               modules={[Autoplay]}
               autoplay={{
@@ -95,20 +95,34 @@ const About = () => {
                 disableOnInteraction: false,
                 pauseOnMouseEnter: false,
               }}
-              speed={5000} // adjust speed for smooth continuous scroll
+              speed={5000} // smooth continuous scroll
+              breakpoints={{
+                0: {
+                  direction: "horizontal", // 📱 Small screens
+                  slidesPerView: 1.2,
+                },
+                640: {
+                  direction: "horizontal", // tablets
+                  slidesPerView: 2,
+                },
+                768: {
+                  direction: "vertical", // 🖥️ desktops
+                  slidesPerView: 3,
+                },
+              }}
               className="h-full"
             >
               {loopedData.map((item, index) => (
                 <SwiperSlide key={index}>
-                  <div className="bg-white rounded-xl shadow-lg p-6 flex items-start gap-4 h-full overflow-hidden">
+                  <div className="bg-white rounded-xl shadow-md p-5 sm:p-6 flex items-start gap-4 h-full">
                     <div className="w-12 h-12 bg-green-100 rounded-full flex justify-center items-center flex-shrink-0">
                       {item.icon}
                     </div>
                     <div className="overflow-hidden">
-                      <h3 className="text-green-900 font-semibold text-lg mb-1 truncate">
+                      <h3 className="text-green-900 font-semibold text-base sm:text-lg mb-1 truncate">
                         {item.header}
                       </h3>
-                      <p className="text-gray-700 text-sm line-clamp-3">
+                      <p className="text-gray-700 text-sm sm:text-base line-clamp-3">
                         {item.para}
                       </p>
                     </div>
@@ -119,8 +133,8 @@ const About = () => {
           </div>
 
           {/* Right Column: Story */}
-          <div className="flex-1 w-full md:w-1/2 p-2 md:p-6 flex flex-col gap-4 overflow-hidden">
-            <h2 className="text-3xl font-semibold text-green-900">
+          <div className="flex-1 w-full md:w-1/2 flex flex-col gap-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-green-900">
               Our Story
             </h2>
             <Typewriter
@@ -129,26 +143,30 @@ const About = () => {
               deletingSpeed={20}
               pauseAfterTyping={2000}
               loop={true}
-              className="whitespace-pre-line"
+              className="whitespace-pre-line text-base sm:text-lg text-gray-800"
             />
-            <p className="text-gray-700 text-justify leading-relaxed line-clamp-5">
+            <p className="text-gray-700 text-justify leading-relaxed text-sm sm:text-base">
               Every parent dreams of seeing their child grow, learn, and express
               themselves confidently. But for us, the journey took an unexpected
               turn when our son, Aryan, was around two years old.
             </p>
-            <p className="text-gray-700 text-justify leading-relaxed line-clamp-5">
+            <p className="text-gray-700 text-justify leading-relaxed text-sm sm:text-base">
               We first noticed that Aryan hadn’t started speaking yet.
               Naturally, concern grew at home — and questions began to surface:
               “Why isn’t he talking yet?” We even heard the common myth: “Boys
               talk late.”
             </p>
-            <p className="text-gray-700 text-justify leading-relaxed ">
-            As a mother, I sensed something deeper. Communication isn’t just speaking — it’s understanding and connecting. Aryan had stopped responding to his name, preferred playing alone, and showed little interest in other children. At first, we thought he just needed more time.
+            <p className="text-gray-700 text-justify leading-relaxed text-sm sm:text-base">
+              As a mother, I sensed something deeper. Communication isn’t just
+              speaking — it’s understanding and connecting. Aryan had stopped
+              responding to his name, preferred playing alone, and showed little
+              interest in other children.
             </p>
-             <p className="text-gray-700 text-justify leading-relaxed ">
-            Through this experience, we learned the importance of early observation, responsive parenting, and seeking guidance when developmental milestones seem delayed. Every child is unique, and early intervention can make a remarkable difference in their speech, social skills, and overall growth.
+            <p className="text-gray-700 text-justify leading-relaxed text-sm sm:text-base">
+              Through this experience, we learned the importance of early
+              observation, responsive parenting, and seeking guidance when
+              developmental milestones seem delayed.
             </p>
-           
           </div>
         </div>
       </section>
