@@ -11,6 +11,7 @@ import Faq from './components/Faq/Faq';
 import Footer from './components/Footer/Footer';
 // import Support from './components/Support/Support';
 import Home from './components/Home/Home';
+import ParentStories from './components/ParentStories/ParentStories';
 
 
 const App = () => {
@@ -19,15 +20,16 @@ const App = () => {
       <ScrollToTop />
       <Navbar />
      <section
-      id="about"
-      className="w-full  md:py-10"
+      id="main-app"
+      className="w-full "
     > <Routes>
         {/* Uncomment when you add these components */}
         <Route path="/" element={<Home />} />
         {/* <Route path="/services" element={<Services />} /> */}
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
-        <Route path="/faq" element={<Faq />} />
+         <Route path="/faq" element={<Faq />} />
+        <Route path="/parent-stories" element={<ParentStories />} />
         {/* <Route path="/support" element={<Support />} /> */}
       </Routes>
 
