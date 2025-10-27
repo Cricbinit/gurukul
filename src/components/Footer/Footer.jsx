@@ -13,7 +13,6 @@
 //   FaWhatsapp
 // } from "react-icons/fa";
 
-
 // import { FaAngleRight } from "react-icons/fa6";
 // const socialLinks = [
 //   {
@@ -55,7 +54,6 @@
 //         {/* Column 1 */}
 //         <div className="relative">
 //           {/* Column content */}
-          
 
 //           {/* Animated vertical line */}
 //           <div className="relative">
@@ -175,10 +173,6 @@
 
 // export default Footer;
 
-
-
-
-
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "../../assets/Vivek.png"; // replace with your image path
@@ -190,7 +184,7 @@ const Footer = () => {
         className="flex items-center gap-4"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true }}
       >
         {/* Profile Image */}
@@ -199,20 +193,19 @@ const Footer = () => {
           alt="Profile"
           className="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover border border-gray-700"
           whileHover={{ scale: 1.1 }}
-          transition={{ type: 'spring', stiffness: 200 }}
+          transition={{ type: "spring", stiffness: 200 }}
         />
 
         {/* Signature Text */}
-       <motion.h2
-  className="text-xl md:text-2xl font-semibold text-white tracking-wide font-[Poppins]"
-  initial={{ opacity: 0, y: -20 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.6, ease: 'easeOut' }}
-  viewport={{ once: true }}
->
-  Vivek Kumar Choubey
-</motion.h2>
-
+        <motion.h2
+          className="text-2xl md:text-3xl font-[Great_Vibes] text-gray-300 italic"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
+          Vivek Kumar Choubey
+        </motion.h2>
       </motion.div>
     </footer>
   );
