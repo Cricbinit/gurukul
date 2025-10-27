@@ -104,7 +104,7 @@ export default function Service() {
             repeat: Infinity,
             repeatType: "mirror",
           }}
-          className="md:fixed md:left-10 md:top-10 md:h-[90vh] md:w-[350px] flex justify-center items-center px-6 py-6 md:py-0"
+          className="md:fixed md:left-10 md:top-10 md:h-[80vh] md:w-[350px] flex justify-center items-center px-6 py-6 md:py-0"
         >
           {/* Glowing Gradient Border Wrapper */}
           <div className="p-[2px] bg-gradient-to-r from-green-400 via-emerald-500 to-green-400 rounded-3xl shadow-[0_0_25px_rgba(34,197,94,0.3)] hover:shadow-[0_0_35px_rgba(34,197,94,0.6)] transition-all duration-500 w-full">
