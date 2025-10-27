@@ -6,6 +6,8 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import { FaBullhorn, FaBullseye } from "react-icons/fa";
 import { AiOutlineEye } from "react-icons/ai";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const About = () => {
   let data = [
@@ -70,10 +72,10 @@ const About = () => {
 
           {/* Right Container */}
           <div className="flex-1 h-[500px] w-full md:w-1/2 flex justify-center md:justify-end">
-            <img
+            <LazyLoadImage
               src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1100&q=80"
               alt="founder"
-              loading="lazy" // 👈 native lazy loading
+              effect="blur" // 👈 adds blur-up effect
               className="w-full h-full object-cover shadow-lg"
             />
           </div>
